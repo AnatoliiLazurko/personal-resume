@@ -1,0 +1,159 @@
+
+.personal-profile {
+    width: 100%;
+    background: #0b0c10;
+}
+
+.personal-profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(56px, 9vw, 110px) clamp(16px, 4vw, 32px);
+}
+
+.personal-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.personal-profile-header span {
+    width: 22px;
+    height: 1.5px;
+    background: #0c5df7;
+    display: block;
+}
+
+.personal-profile-header p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255, 255, 255, .58);
+}
+
+.personal-profile-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: flex-start;
+    margin-top: clamp(24px, 4vw, 48px);
+}
+
+.personal-profile-image {
+    flex: 0 1 320px;
+    min-width: 260px;
+}
+
+.personal-profile-image-container {
+    border-radius: 24px;
+    border: 1.5px solid rgba(255, 255, 255, .12);
+    background: #14151c;
+    padding: 16px;
+}
+
+.personal-profile-image-container img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+}
+
+.download-cv-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 16px 0 16px;
+    background-color: #0c5df7;
+    padding: 11px 20px;
+    border-radius: 12px;
+    letter-spacing: .15em;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(12, 93, 247, .45);
+    transition: all .3s cubic-bezier(.2, .7, .2, 1);
+}
+
+.download-cv-button:hover {
+    background-color: #0842cf;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px -8px rgba(12, 93, 247, .6);
+}
+
+.personal-profile-info {
+    flex: 1 1 420px;
+    min-width: 280px;
+}
+
+.personal-profile-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: rgba(255, 255, 255, .82);
+    line-height: 1.55;
+    font-size: clamp(15px, 1.2vw, 17px);
+}
+
+.personal-profile-text p {
+    margin: 0;
+}
+
+.personal-profile-text span {
+    color: #fff;
+    font-weight: 700;
+}
+
+.personal-profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.personal-profile-details-item {
+    border: 1.5px solid rgba(255, 255, 255, .12);
+    background: #14151c;
+    border-radius: 18px;
+    padding: 22px 18px;
+}
+
+.details-item-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-item-container p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, .6);
+    letter-spacing: .12em;
+}
+
+.details-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #FAFCFF;
+    border-radius: 10px;
+    filter: drop-shadow(0 6px 10px rgba(12, 93, 247, .20)) drop-shadow(0 1px 1px rgba(12, 93, 247, .10));
+}
+
+.details-item-icon svg {
+    color: #0c5df7;
+}
+
+.details-item-value {
+    margin: 0;
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 32px);
+    color: #fff;
+    margin-top: 12px;
+}
