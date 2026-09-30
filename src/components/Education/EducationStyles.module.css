@@ -1,0 +1,149 @@
+
+.education {
+    width: 100%;
+    background: #f5f5f2;
+}
+
+.education-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(56px, 9vw, 110px) clamp(16px, 4vw, 32px);
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.education-header span {
+    width: 22px;
+    height: 2px;
+    background: #0c5df7;
+    display: block;
+}
+
+.education-header p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    color: #7a7a78;
+}
+
+.education-description {
+    text-align: center;
+    margin-top: clamp(24px, 4vw, 48px);
+    margin-bottom: 26px;
+    line-height: 1.5;
+    color: #0a0a0a;
+    font-weight: 800;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.5;
+}
+
+.education-description span {
+    color: #0c5df7;
+}
+
+
+
+
+
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 24px;
+}
+
+/* Вертикальна лінія, що проходить через всі елементи */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: #e3e3de;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0c5df7;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #0c5df7;
+}
+
+.timeline-content {
+    background: #fff;
+    border: 1.5px solid #e3e3de;
+    border-radius: 16px;
+    padding: 20px 22px;
+    transition: all .3s cubic-bezier(.2, .7, .2, 1);
+}
+
+.timeline-content:hover {
+    border-color: #0c5df7;
+    transform: translateX(4px);
+}
+
+.timeline-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.timeline-institution {
+    font-weight: 800;
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: #0a0a0a;
+    margin: 0;
+}
+
+.timeline-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #7a7a78;
+    white-space: nowrap;
+}
+
+.timeline-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.timeline-details li {
+    font-size: clamp(14px, 1.1vw, 16px);
+    color: #2a2a2a;
+    position: relative;
+    padding-left: 14px;
+}
+
+.timeline-details li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #0c5df7;
+}
