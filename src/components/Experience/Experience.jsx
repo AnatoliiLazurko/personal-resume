@@ -11,6 +11,9 @@ const Experience = () => {
                     <p>Work Experience</p>
                     <span/>
                 </div>
+
+                <h2 className={styles['experience-heading']}>Work Experience <span> I hold</span></h2>
+
                 <div>
                     <p className={styles['experience-description']}>
                         An overview of <span>my recent roles</span> — click each entry to see full details.

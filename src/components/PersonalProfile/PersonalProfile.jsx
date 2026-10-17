@@ -13,6 +13,8 @@ const PersonalProfile = () => {
                     <span/>
                 </div>
 
+                <h2 className={styles['personal-profile-heading']}>Main about <span>myself</span></h2>
+
                 <div className={styles['personal-profile-content']}>
                     <div className={styles['personal-profile-image']}>
                         <div className={styles['personal-profile-image-container']}>

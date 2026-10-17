@@ -11,6 +11,9 @@ const Education = () => {
                 <p>Education</p>
                 <span />
             </div>
+                
+            <h2 className={styles['education-heading']}>Education <span> I received</span></h2>
+                
             <div>
                 <p className={styles['education-description']}>
                     A summary of <span>my qualifications</span> and academic history.

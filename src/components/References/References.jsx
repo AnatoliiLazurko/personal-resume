@@ -18,6 +18,8 @@ const References = () => {
                     <span />
                 </div>
 
+                <h2 className={styles['references-heading']}>References <span> I have</span></h2>
+
                 <p className={styles['references-description']}>
                     Contact details are <span>hidden for privacy</span> — available on request.
                 </p>

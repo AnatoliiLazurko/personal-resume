@@ -34,10 +34,24 @@
     color: #7a7a78;
 }
 
+.education-heading {
+    font-weight: 800;
+    font-size: clamp(28px, 4.4vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    margin: 0 0 14px;
+    margin-top: 18px;
+    text-align: center;
+    color: #0a0a0a;
+}
+
+.education-heading span {
+    color: #0c5df7;
+}
+
 .education-description {
     text-align: center;
-    margin-top: clamp(24px, 4vw, 48px);
-    margin-bottom: 26px;
+    margin: 0 auto clamp(36px, 5vw, 56px);
     line-height: 1.5;
     color: #0a0a0a;
     font-weight: 800;
@@ -48,9 +62,6 @@
 .education-description span {
     color: #0c5df7;
 }
-
-
-
 
 
 
