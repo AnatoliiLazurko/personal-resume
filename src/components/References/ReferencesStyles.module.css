@@ -8,6 +8,7 @@
     max-width: 1080px;
     margin: 0 auto;
     padding: clamp(56px, 9vw, 110px) clamp(16px, 4vw, 32px);
+    padding-top: 0;
 }
 
 .references-header {
