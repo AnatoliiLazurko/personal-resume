@@ -12,7 +12,7 @@ const Experience = () => {
                     <span/>
                 </div>
 
-                <h2 className={styles['experience-heading']}>Work Experience <span> I hold</span></h2>
+                <h2 className={styles['experience-heading']}>Work experience <span> I hold</span></h2>
 
                 <div>
                     <p className={styles['experience-description']}>

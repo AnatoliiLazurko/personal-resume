@@ -6,6 +6,7 @@ import Header from './components/Header/Header'
 import Languages from './components/Languages/Languages'
 import PersonalProfile from './components/PersonalProfile/PersonalProfile'
 import References from './components/References/References'
+import Skills from './components/Skills/Skills'
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
       <Header />
       <PersonalProfile />
       <Experience />
-      <Languages />
+      <Skills />
       <Education />
+      <Languages />
       <References />
       <Footer />
     </>
