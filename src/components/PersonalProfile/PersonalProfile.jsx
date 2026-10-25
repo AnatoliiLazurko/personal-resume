@@ -1,6 +1,6 @@
 //import React from 'react';
 import styles from './PersonalProfileStyles.module.css';
-import { MapPin, CircleStar, UserPlus } from 'lucide-react'
+import { MapPin, CircleStar, BadgeCheck  } from 'lucide-react'
 import MyPhoto from '../../picture/my-photo.jpg';
 
 const PersonalProfile = () => {
@@ -53,11 +53,11 @@ const PersonalProfile = () => {
                             <div className={styles['personal-profile-details-item']}>
                                 <div className={styles['details-item-container']}>
                                     <div className={styles['details-item-icon']}>
-                                        <UserPlus size={30} />
+                                        <BadgeCheck  size={30} />
                                     </div>
-                                    <p>Age</p>
+                                    <p>Right to work</p>
                                 </div>
-                                <p className={styles['details-item-value']}>21 years old</p>
+                                <p className={styles['details-item-value']}>Full UK</p>
                             </div>
                             <div className={styles['personal-profile-details-item']}>
                                 <div className={styles['details-item-container']}>
