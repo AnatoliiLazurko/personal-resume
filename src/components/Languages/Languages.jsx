@@ -1,43 +1,57 @@
 //import React from 'react';
 import styles from './LanguagesStyles.module.css';
 import { languages } from '../../data/languagesData';
+import { motion } from 'motion/react';
+import { ease, container, fadeUp, row, lang, dot, viewport } from '../../animations/languagesAnimation';
 
 const Languages = () => {
     return (
-        <section className={styles.languages}>
+        <motion.section
+            className={styles.languages}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+        >
             <div className={styles['languages-container']}>
-                <div className={styles['languages-header']}>
+                <motion.div variants={fadeUp} className={styles['languages-header']}>
                     <span />
                     <p>Languages</p>
                     <span />
-                </div>
+                </motion.div>
 
-                <h2 className={styles['languages-heading']}>Languages <span> I speak</span></h2>
+                <motion.h2 variants={fadeUp} className={styles['languages-heading']}>Languages <span> I speak</span></motion.h2>
 
-                <div>
+                <motion.div variants={fadeUp}>
                     <p className={styles['languages-description']}>
                         A summary of <span>my languages</span> — and how confidently I use them.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className={styles.row}>
-                {languages.map((lang) => (
-                    <div key={lang.id} className={styles.lang}>
-                    <span className={styles.name}>{lang.name}</span>
+                <motion.div className={styles.row} variants={row}>
+                {languages.map((language) => (
+                    <motion.div
+                        key={language.id}
+                        className={styles.lang}
+                        variants={lang}
+                        whileHover={{ y: -4, transition: { duration: 0.3, ease } }}
+                    >
+                    <span className={styles.name}>{language.name}</span>
                     <div className={styles.dots}>
                         {[...Array(6)].map((_, i) => (
-                        <span
+                        <motion.span
                             key={i}
-                            className={`${styles.dot} ${i < lang.bars ? styles.dotFilled : ''}`}
+                            variants={dot}
+                            className={`${styles.dot} ${i < language.bars ? styles.dotFilled : ''}`}
                         />
                         ))}
                     </div>
-                    <span className={styles.level}>{lang.level}</span>
-                    </div>
+                    <span className={styles.level}>{language.level}</span>
+                    </motion.div>
                 ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

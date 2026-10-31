@@ -1,24 +1,28 @@
 import { useState } from 'react';
 import styles from './ExperienceStyles.module.css';
 import { CircleChevronDown, X } from 'lucide-react';
+import { motion } from 'motion/react';
+import { fromLeft, fromBottom } from '../../animations/experienceAnimation';
 
 const ExperienceItem = ({ position, company, period, details }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={styles['experience-item']}>
+        <motion.div variants={fromLeft} className={styles['experience-item']}>
             <div
                 className={styles['experience-item-container']}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <p className={styles['experience-item-role']}>{position}</p>                           
-                <CircleChevronDown
-                    size={30}
-                    className={`${styles['experience-chevron']} ${
-                        isOpen ? styles['experience-chevron-open'] : ''
-                    }`}
-                />
+                <motion.div variants={fromBottom}>
+                    <CircleChevronDown
+                        size={30}
+                        className={`${styles['experience-chevron']} ${
+                            isOpen ? styles['experience-chevron-open'] : ''
+                        }`}
+                    />
+                </motion.div>
             </div>
             
             <div className={`${styles['experience-item-details']} ${isOpen ? styles['experience-item-display'] : ''}`}>
@@ -78,7 +82,7 @@ const ExperienceItem = ({ position, company, period, details }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

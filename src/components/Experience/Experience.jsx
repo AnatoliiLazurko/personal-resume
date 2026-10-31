@@ -1,24 +1,32 @@
 import styles from './ExperienceStyles.module.css';
 import { experience } from '../../data/experienceData';
 import ExperienceItem from './ExperienceItem';
+import { motion } from 'motion/react';
+import { container, fadeUp, viewport } from '../../animations/experienceAnimation';
 
 const Experience = () => {
     return (
-        <section className={styles.experience}>
+        <motion.section
+            className={styles.experience}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+        >
             <div className={styles['experience-container']}>
-                <div className={styles['experience-header']}>
+                <motion.div variants={fadeUp} className={styles['experience-header']}>
                     <span />
                     <p>Work Experience</p>
                     <span/>
-                </div>
+                </motion.div>
 
-                <h2 className={styles['experience-heading']}>Work experience <span> I hold</span></h2>
+                <motion.h2 variants={fadeUp} className={styles['experience-heading']}>Work experience <span> I hold</span></motion.h2>
 
-                <div>
+                <motion.div variants={fadeUp}>
                     <p className={styles['experience-description']}>
                         An overview of <span>my recent roles</span> — click each entry to see full details.
                     </p>
-                </div>
+                </motion.div>
                 
                 <div className={styles['experience-grid']}>
 
@@ -28,7 +36,7 @@ const Experience = () => {
 
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

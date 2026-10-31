@@ -1,30 +1,44 @@
 //import React from 'react';
 import styles from './EducationStyles.module.css';
 import { education } from '../../data/educationData';
+import { motion } from 'motion/react';
+import { ease, container, fadeUp, timeline, line, itemCard, marker, cardIn, viewport } from '../../animations/educationAnimation';
 
 const Education = () => {
     return (
-        <section className={styles.education}>
+        <motion.section
+            className={styles.education}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+        >
         <div className={styles['education-container']}>
-            <div className={styles['education-header']}>
+            <motion.div variants={fadeUp} className={styles['education-header']}>
                 <span />
                 <p>Education</p>
                 <span />
-            </div>
+            </motion.div>
                 
-            <h2 className={styles['education-heading']}>Education <span> I received</span></h2>
+            <motion.h2 variants={fadeUp} className={styles['education-heading']}>Education <span> I received</span></motion.h2>
                 
-            <div>
+            <motion.div variants={fadeUp}>
                 <p className={styles['education-description']}>
                     A summary of <span>my qualifications</span> and academic history.
                 </p>
-            </div>
+            </motion.div>
 
-            <div className={styles.timeline}>
+            <motion.div variants={timeline} className={styles.timeline}>
+                <motion.span className={styles['timeline-line']} variants={line} aria-hidden="true" />
+                
                 {education.map((item) => (
-                    <div key={item.id} className={styles['timeline-item']}>
-                        <div className={styles['timeline-marker']} />
-                        <div className={styles['timeline-content']}>
+                    <motion.div key={item.id} className={styles['timeline-item']} variants={itemCard}>
+                        <motion.div className={styles['timeline-marker']} variants={marker} />
+                        <motion.div
+                            className={styles['timeline-content']}
+                            variants={cardIn}
+                            whileHover={{ x: 4, transition: { duration: 0.3, ease } }}
+                        >
                             <div className={styles['timeline-top']}>
                                 <p className={styles['timeline-institution']}>{item.institution}</p>
                                 <span className={styles['timeline-period']}>{item.period}</span>
@@ -34,12 +48,12 @@ const Education = () => {
                                     <li key={i}>{detail}</li>
                                 ))}
                             </ul>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                        </motion.div>
+                    </motion.div>
+                ))}    
+            </motion.div>
         </div>
-        </section>
+        </motion.section>
     );
 }
 

@@ -2,45 +2,59 @@
 import styles from './InterestsStyles.module.css';
 import { interests } from '../../data/interestsData';
 import { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ease, container, row, item, fadeUp, viewport } from '../../animations/interestsAnimation';
 
 const iconMap = { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen }
 
+
 const Interests = () => {
     return (
-        <section className={styles.interests}>
+        <motion.section
+            className={styles.interests}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+        >
             <div className={styles['interests-container']}>
 
-                <div className={styles['interests-header']}>
+                <motion.div variants={fadeUp} className={styles['interests-header']}>
                     <span />
                     <p>Interests</p>
                     <span/>
-                </div>
+                </motion.div>
 
-                <h2 className={styles['interests-heading']}>Interests <span> I have</span></h2>
+                <motion.h2 variants={fadeUp} className={styles['interests-heading']}>Interests <span> I have</span></motion.h2>
 
-                <div>
+                <motion.div variants={fadeUp}>
                     <p className={styles['interests-description']}>
                         What I enjoy <span>outside of work</span>.
                     </p>
-                </div>
+                </motion.div>
 
 
-                <div className={styles['interests-grid']}>
+                <motion.div variants={row} className={styles['interests-grid']}>
                     {interests.map((interest) => {
                         const Icon = iconMap[interest.icon]
                         return (
-                        <div key={interest.id} className={styles['interest-item']}>
+                        <motion.div
+                            key={interest.id}
+                            variants={item}
+                            whileHover={{ y: -6, transition: { duration: 0.3, ease } }}
+                            className={styles['interest-item']}
+                        >
                             <div className={styles['interest-circle']}>
                                 <Icon size={30} />
                             </div>
                             <span className={styles['interest-name']}>{interest.name}</span>
-                        </div>
+                        </motion.div>
                         )
                     })}
-                </div>
+                </motion.div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }
 

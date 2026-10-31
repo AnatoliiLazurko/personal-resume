@@ -2,7 +2,11 @@
 import { useEffect, useRef } from 'react';
 import styles from './HeaderStyle.module.css';
 import { Link } from "react-router";
+import { motion } from 'motion/react';
+import { ease, container, button, fromBottom } from '../../animations/headerAnimation';
 
+
+const MotionLink = motion.create(Link)
 
 const Header = () => {
     const progressRef = useRef(null)
@@ -28,24 +32,67 @@ const Header = () => {
     }, [])
 
     return (
-        <header className={styles.header}>
+        <motion.header
+            className={styles.header}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+        >
             <div className={styles.container}>
                 <div className={styles['header-content']}>
-                    <p className={styles['header-title']}>cv.anatolii</p>
+                    <motion.p variants={fromBottom} className={styles['header-title']}>cv.anatolii</motion.p>
                     <nav className={styles['header-nav']}>
-                        <Link to="/">Profile</Link>
-                        <Link to="/">Experience</Link>
-                        <Link to="/">Education</Link>
-                        <Link to="/">Reference</Link>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Profile</MotionLink>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Experience</MotionLink>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Skills</MotionLink>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Education</MotionLink>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Interests</MotionLink>
+                        <MotionLink
+                            to="/"
+                            variants={fromBottom}
+                            whileHover={{ y: -1 }}
+                            transition={{ duration: 0.3, ease }}
+                        >Reference</MotionLink>
                     </nav>
                 </div>
-                <div className={styles['contact-button']}>
+                <motion.div
+                    variants={button}
+                    whileHover={{ y: -1 }}
+                    transition={{ duration: 0.3, ease }}
+                    className={styles['contact-button']}
+                >
                     CONTACT
-                </div>
+                </motion.div>
             </div>
 
             <div className={styles['scroll-progress']} ref={progressRef} />
-        </header>
+        </motion.header>
     );
 }
 

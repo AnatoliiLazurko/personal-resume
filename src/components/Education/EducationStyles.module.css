@@ -74,14 +74,15 @@
 }
 
 /* Вертикальна лінія, що проходить через всі елементи */
-.timeline::before {
-    content: '';
+.timeline-line {
     position: absolute;
     left: 5px;
     top: 6px;
     bottom: 6px;
     width: 2px;
-    background: #d3d3d1;
+    background: #cfcfc8;
+    transform-origin: top;
+    /* лінія росте зверху вниз */
 }
 
 .timeline-item {
@@ -111,6 +112,7 @@
 .timeline-content:hover {
     border-color: #0c5df7;
     transform: translateX(4px);
+    box-shadow: 0 30px 60px -25px rgba(12, 93, 247, .3);
 }
 
 .timeline-top {
