@@ -7,6 +7,7 @@ import { container, fadeUp, viewport } from '../../animations/experienceAnimatio
 const Experience = () => {
     return (
         <motion.section
+            id="experience"
             className={styles.experience}
             variants={container}
             initial="hidden"

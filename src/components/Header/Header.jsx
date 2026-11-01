@@ -1,12 +1,17 @@
 //import React from 'react';
 import { useEffect, useRef } from 'react';
 import styles from './HeaderStyle.module.css';
-import { Link } from "react-router";
 import { motion } from 'motion/react';
 import { ease, container, button, fromBottom } from '../../animations/headerAnimation';
 
-
-const MotionLink = motion.create(Link)
+const navLinks = [
+    { id: 'personal-profile', label: 'Profile' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'education', label: 'Education' },
+    { id: 'interests', label: 'Interests' },
+    { id: 'references', label: 'Reference' },
+]
 
 const Header = () => {
     const progressRef = useRef(null)
@@ -31,6 +36,28 @@ const Header = () => {
         }
     }, [])
 
+    const handleContact = () => {
+        const to = import.meta.env.VITE_CONTACT_EMAIL
+        const subject = 'Interested in your CV'
+        const body = [
+            'Hello Anatolii,',
+            '',
+            "I came across your CV and I'm interested in discussing a possible opportunity with you.",
+            '',
+            '[Please add details about the role here]',
+            '',
+            'Kind regards,',
+        ].join('\r\n')
+
+        const url =
+            `https://mail.google.com/mail/?view=cm&fs=1` +
+            `&to=${encodeURIComponent(to)}` +
+            `&su=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`
+
+        window.open(url, '_blank', 'noopener,noreferrer')
+    }
+
     return (
         <motion.header
             className={styles.header}
@@ -43,42 +70,17 @@ const Header = () => {
                 <div className={styles['header-content']}>
                     <motion.p variants={fromBottom} className={styles['header-title']}>cv.anatolii</motion.p>
                     <nav className={styles['header-nav']}>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Profile</MotionLink>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Experience</MotionLink>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Skills</MotionLink>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Education</MotionLink>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Interests</MotionLink>
-                        <MotionLink
-                            to="/"
-                            variants={fromBottom}
-                            whileHover={{ y: -1 }}
-                            transition={{ duration: 0.3, ease }}
-                        >Reference</MotionLink>
+                        {navLinks.map((link) => (
+                            <motion.a
+                                key={link.id}
+                                href={`#${link.id}`}
+                                variants={fromBottom}
+                                whileHover={{ y: -1 }}
+                                transition={{ duration: 0.3, ease }}
+                            >
+                                {link.label}
+                            </motion.a>
+                        ))}
                     </nav>
                 </div>
                 <motion.div
@@ -86,6 +88,7 @@ const Header = () => {
                     whileHover={{ y: -1 }}
                     transition={{ duration: 0.3, ease }}
                     className={styles['contact-button']}
+                    onClick={handleContact}
                 >
                     CONTACT
                 </motion.div>

@@ -7,6 +7,7 @@ import { ease, container, fadeUp, row, lang, dot, viewport } from '../../animati
 const Languages = () => {
     return (
         <motion.section
+            id="languages"
             className={styles.languages}
             variants={container}
             initial="hidden"

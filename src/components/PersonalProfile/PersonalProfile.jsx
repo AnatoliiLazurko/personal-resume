@@ -6,8 +6,19 @@ import { motion } from 'motion/react';
 import { container, fadeUp, fadeButtonUp, fromLeft, fromRight, fromBottom } from '../../animations/personalProfileAnimation';
 
 const PersonalProfile = () => {
+
+    const handleDownload = () => {
+        const link = document.createElement('a')
+        link.href = `${import.meta.env.BASE_URL}docs/CV Anatolii Lazurco.docx`
+        link.download = 'Anatolii Lazurco CV.docx'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+    }
+
     return (
         <motion.section
+            id="personal-profile"
             className={styles['personal-profile']}
             variants={container}
             initial="hidden"
@@ -28,7 +39,7 @@ const PersonalProfile = () => {
                         <motion.div variants={fromLeft} className={styles['personal-profile-image-container']}>
                             <img src={MyPhoto} alt="Profile" />
                         </motion.div>
-                        <motion.div variants={fadeButtonUp} className={styles['download-cv-button']}>
+                        <motion.div onClick={handleDownload} variants={fadeButtonUp} className={styles['download-cv-button']}>
                             DOWNLOAD CV
                         </motion.div>
                     </div>

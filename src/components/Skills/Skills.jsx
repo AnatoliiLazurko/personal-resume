@@ -10,6 +10,7 @@ const iconMap = { Users, ShieldCheck, Wrench, Monitor, Clock, MessageCircle }
 const Skills = () => {
     return (
         <motion.section
+            id="skills"
             className={styles.skills}
             variants={container}
             initial="hidden"

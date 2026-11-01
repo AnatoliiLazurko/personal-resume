@@ -8,11 +8,28 @@ import { container, button, fadeUp, grid, card, viewport } from '../../animation
 const References = () => {
 
     const handleRequest = () => {
-        window.location.href = "mailto:Lazurko2005@gmail.com?subject=Reference Request&body=Hi, I would like to request references for Anatolii Lazurco."
+        const to = import.meta.env.VITE_CONTACT_EMAIL
+        const subject = 'Reference Request'
+        const body = [
+            'Hello Anatolii,',
+            '',
+            'I would like to request references for you.',
+            '',
+            'Kind regards,',
+        ].join('\n')
+
+        const url =
+            `https://mail.google.com/mail/?view=cm&fs=1` +
+            `&to=${encodeURIComponent(to)}` +
+            `&su=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`
+
+        window.open(url, '_blank', 'noopener,noreferrer')
     }
 
     return (
         <motion.section
+            id="references"
             className={styles.references}
             variants={container}
             initial="hidden"

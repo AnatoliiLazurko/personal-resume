@@ -7,6 +7,7 @@ import { ease, container, fadeUp, timeline, line, itemCard, marker, cardIn, view
 const Education = () => {
     return (
         <motion.section
+            id="education"
             className={styles.education}
             variants={container}
             initial="hidden"

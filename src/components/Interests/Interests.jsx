@@ -1,16 +1,17 @@
 //import React from 'react';
 import styles from './InterestsStyles.module.css';
 import { interests } from '../../data/interestsData';
-import { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen } from 'lucide-react';
+import { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen, CarFront } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ease, container, row, item, fadeUp, viewport } from '../../animations/interestsAnimation';
 
-const iconMap = { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen }
+const iconMap = { Dumbbell, CodeXml, Gamepad2, Film, Clapperboard, BookOpen, CarFront }
 
 
 const Interests = () => {
     return (
         <motion.section
+            id="interests"
             className={styles.interests}
             variants={container}
             initial="hidden"

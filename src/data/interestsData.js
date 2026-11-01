@@ -6,4 +6,5 @@ export const interests = [
     { id: 4, icon: "Film", name: "Films" },
     { id: 5, icon: "Clapperboard", name: "Video Editing" },
     { id: 6, icon: "BookOpen", name: "Reading" },
+    { id: 7, icon: "CarFront", name: "Car Detailing" },
 ]
