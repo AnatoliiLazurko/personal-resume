@@ -60,6 +60,9 @@ const Header = () => {
         window.open(url, '_blank', 'noopener,noreferrer')
     }
 
+
+    // MENU FOR MOBILE
+
     useEffect(() => {
         const closeOnEscape = (e) => e.key === 'Escape' && setIsOpen(false)
         const closeOnDesktop = () => window.innerWidth > 820 && setIsOpen(false)
@@ -101,7 +104,7 @@ const Header = () => {
                                     {link.label}
                                 </motion.a>
                             ))}
-                            
+
                             <motion.div
                                 whileTap={{ scale: 0.97 }}
                                 className={`${styles['contact-button']} ${styles['contact-button-mobile']}`}
